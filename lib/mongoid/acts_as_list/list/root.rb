@@ -27,7 +27,7 @@ module Mongoid::ActsAsList
 
         criteria = criteria.to_criteria if criteria.is_a? self.class
 
-        inc position_field => by_how_much
+        inc position_field, by_how_much
       end
 
       def to_criteria
