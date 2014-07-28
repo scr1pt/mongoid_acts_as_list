@@ -55,7 +55,7 @@ module Mongoid::ActsAsList
 
         include list_submodule
         define_position_field field
-        define_position_scope scope
+        define_position_scope scope  if scope.present
       end
 
       def order_by_position(conditions = {}, order = :asc)
