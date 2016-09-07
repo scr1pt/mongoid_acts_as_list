@@ -26,8 +26,7 @@ module Mongoid::ActsAsList
         by_how_much = options.fetch(:by, 1)
 
         criteria = criteria.to_criteria if criteria.is_a? self.class
-
-        collection.find(criteria.selector).update("$inc" => { position_field => by_how_much })
+        collection.find(criteria.selector).update_one("$inc" => { position_field => by_how_much })
       end
 
       def to_criteria
